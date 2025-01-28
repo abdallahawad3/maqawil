@@ -3,19 +3,19 @@ import { img01, img02, img03, img04, img05 } from "@/public/images";
 export const Routes = [
   {
     name: "الرئسيه",
-    link: "/",
+    link: "#hero",
+  },
+  {
+    name: "خداماتنا",
+    link: "#services",
   },
   {
     name: "عنا",
-    link: "/",
+    link: "#about",
   },
   {
     name: "تواصل معنا",
-    link: "/",
-  },
-  {
-    name: "اراء العملاء",
-    link: "/",
+    link: "#contact",
   },
 ];
 

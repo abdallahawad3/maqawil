@@ -17,18 +17,20 @@ export const MaskContainer = ({
   className?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [mousePosition, setMousePosition] = useState<any>({ x: null, y: null });
   const containerRef = useRef<HTMLDivElement>(null);
   const updateMousePosition = (e: MouseEvent) => {
-    const rect = containerRef.current.getBoundingClientRect();
-    setMousePosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+    const rect = containerRef.current?.getBoundingClientRect();
+    setMousePosition({ x: e.clientX - rect!.left, y: e.clientY - rect!.top });
   };
 
   useEffect(() => {
-    containerRef.current.addEventListener("mousemove", updateMousePosition);
+    const container = containerRef.current;
+    container?.addEventListener("mousemove", updateMousePosition);
     return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener("mousemove", updateMousePosition);
+      if (container) {
+        container.removeEventListener("mousemove", updateMousePosition);
       }
     };
   }, []);
