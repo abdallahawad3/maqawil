@@ -1,5 +1,5 @@
 import { projects } from "@/data";
-import { HoverEffect } from "./ui/card-hover-effect";
+import { ServicesList } from "./ui/card-hover-effect";
 
 const Services = () => {
   return (
@@ -10,7 +10,7 @@ const Services = () => {
             خداماتنا
           </span>
         </h2>
-        <HoverEffect items={projects} />
+        <ServicesList items={projects} />
       </div>
     </section>
   );

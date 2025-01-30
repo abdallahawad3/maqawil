@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { img01 } from "@/public/images";
 import { MaskContainer } from "./ui/svg-mask-effect";
-
+import img from "@/public/01.jpeg";
 const About = () => {
   return (
     <section className="container py-8" id="about">
@@ -12,7 +11,7 @@ const About = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-between gap-4">
         <div>
-          <Image src={img01} alt="About Us Image" />
+          <Image src={img} className="w-full size-[700px] object-cover" alt="About Us Image" />
         </div>
         <div className="flex items-center justify-center  overflow-hidden">
           <MaskContainer

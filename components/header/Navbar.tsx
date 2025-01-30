@@ -1,7 +1,9 @@
 "use client";
 
 import { Routes } from "@/data";
-import Link from "../link";
+// import Link from "../link";
+import { Link } from "react-scroll";
+
 import { Button } from "../ui/button";
 import { Menu, XIcon } from "lucide-react";
 import { useState } from "react";
@@ -17,7 +19,7 @@ const Navbar = () => {
       <ul
         className={`fixed lg:static ${
           openMenu ? "left-0 z-50" : "-left-full"
-        } top-0 px-10 py-20 lg:p-0 bg-background lg:bg-transparent transition-all duration-200 h-full lg:h-auto flex-col lg:flex-row w-full lg:w-auto flex items-start lg:items-center gap-10`}>
+        } top-0 px-10 py-20 lg:p-0 bg-black lg:bg-transparent transition-all duration-200 h-full lg:h-auto flex-col lg:flex-row w-full lg:w-auto flex items-start lg:items-center gap-10`}>
         <Button
           variant="secondary"
           size="sm"
@@ -28,8 +30,9 @@ const Navbar = () => {
         {Routes.map((ele) => (
           <li key={ele.name} className="">
             <Link
-              className="font-bold text-lg font-mono text-gray-600 dark:text-gray-300 transition duration-100 hover:text-black dark:hover:text-white"
-              href={ele.link}>
+              onClick={() => setOpenMenu(false)}
+              className="font-bold cursor-pointer text-lg font-mono text-gray-600 dark:text-gray-300 transition duration-100 hover:text-white"
+              to={ele.link}>
               {ele.name}
             </Link>
           </li>

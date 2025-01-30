@@ -2,9 +2,10 @@
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-export const HoverEffect = ({
+export const ServicesList = ({
   items,
   className,
 }: {
@@ -12,6 +13,7 @@ export const HoverEffect = ({
     title: string;
     description: string;
     src: string;
+    url: string;
   }[];
   className?: string;
 }) => {
@@ -43,8 +45,13 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardImage src={item.src} />
-            <CardTitle>{item.title}</CardTitle>
+            <Link href={item.url}>
+              <CardImage src={item.src} />
+            </Link>
+
+            <CardTitle>
+              <Link href={item.url}>{item.title}</Link>
+            </CardTitle>
             <CardDescription>{item.description}</CardDescription>
           </Card>
         </div>
