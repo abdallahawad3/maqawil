@@ -1,13 +1,11 @@
 "use client";
 
 import { Routes } from "@/data";
-// import Link from "../link";
-import { Link } from "react-scroll";
-
 import { Button } from "../ui/button";
 import { Menu, XIcon } from "lucide-react";
 import { useState } from "react";
 import { ModeToggle } from "../ModeToggle";
+import { scrollToSection } from "@/lib/scroll";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -29,12 +27,14 @@ const Navbar = () => {
         </Button>
         {Routes.map((ele) => (
           <li key={ele.name} className="">
-            <Link
-              onClick={() => setOpenMenu(false)}
-              className="font-bold cursor-pointer text-lg font-mono text-gray-600 dark:text-gray-300 transition duration-100 hover:text-white"
-              to={ele.link}>
+            <a
+              onClick={() => {
+                setOpenMenu(false);
+                scrollToSection(ele.link);
+              }}
+              className="font-bold cursor-pointer text-lg font-mono text-gray-600 dark:text-gray-300 transition duration-100 hover:text-white">
               {ele.name}
-            </Link>
+            </a>
           </li>
         ))}
         <ModeToggle />
