@@ -23,6 +23,20 @@ export const metadata: Metadata = {
   title: "شركة مقاولات في جدة ومكة | خبرة وجودة في التنفيذ",
   description:
     "نحن شركة مقاولات رائدة في جدة ومكة، نقدم خدمات البناء والتشييد بأعلى معايير الجودة والكفاءة. تواصل معنا لتحقيق مشاريعك باحترافية.",
+  openGraph: {
+    title: "شركة مقاولات في جدة ومكة",
+    description: "نحن شركة مقاولات بخبرة وجودة عالية في تنفيذ المشاريع بجدة ومكة.",
+    url: "https://maqawil-u3s1.vercel.app/bone-building",
+    type: "website",
+    images: [
+      {
+        url: "https://maqawil-u3s1.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F05.6274069c.webp&w=640&q=75",
+        width: 1200,
+        height: 630,
+        alt: "شركة مقاولات في جدة ومكة",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
