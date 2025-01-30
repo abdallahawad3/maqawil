@@ -36,6 +36,7 @@ export const metadata: Metadata = {
         alt: "شركة مقاولات في جدة ومكة",
       },
     ],
+    locale: "ar_SA",
   },
 };
 
