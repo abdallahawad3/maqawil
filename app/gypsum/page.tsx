@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IconSquareRoundedX } from "@tabler/icons-react";
 import Decor from "@/components/decor/Decor";
 import Slider from "@/components/Slider";
-import { Button } from "@/components/ui/button";
 import { GypsumData } from "@/data";
+import ContactButton from "@/components/ContactButton";
 const Gypsum = () => {
   const [loading, setLoading] = useState(false);
   return (
@@ -167,9 +167,7 @@ const Gypsum = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg">
-              تواصل معنا الآن
-            </Button>
+            <ContactButton />
           </motion.div>
         </div>
         <div>

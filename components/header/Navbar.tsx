@@ -26,8 +26,10 @@ const Navbar = () => {
           <XIcon className="!w-6 !h-6" />
         </Button>
         {Routes.map((ele) => (
-          <li key={ele.name} className="">
+          <li key={ele.name}>
             <a
+              aria-label={`Scroll to ${ele.name}`}
+              role="button"
               onClick={() => {
                 setOpenMenu(false);
                 scrollToSection(ele.link);

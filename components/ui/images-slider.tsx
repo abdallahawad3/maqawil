@@ -21,8 +21,8 @@ export const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [loading, setLoading] = useState(false);
-  console.log(loading);
 
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
