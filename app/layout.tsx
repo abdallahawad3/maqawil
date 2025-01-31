@@ -6,6 +6,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/header";
+import Head from "next/head";
 
 const geistAmiri = Amiri({
   weight: "400",
@@ -47,6 +48,10 @@ export default function RootLayout({
 }>) {
   return (
     <html className="scroll-smooth" lang="ar" dir="rtl" suppressHydrationWarning>
+      <Head>
+        <meta name="google-site-verification" content="google25f68322812c3a2f" />
+      </Head>
+
       <body className={`${geistAmiri.variable} ${geistCairo.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
