@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Button } from "./button";
 
 export const ServicesList = ({
   items,
@@ -46,13 +47,18 @@ export const ServicesList = ({
           </AnimatePresence>
           <Card>
             <Link href={item.url}>
-              <CardImage src={item.src} />
+              <CardImage src={item.src} className="h-[200px]" />
             </Link>
 
             <CardTitle>
-              <Link href={item.url}>{item.title}</Link>
+              <Link href={item.url}>{item.title.slice(0, 20)}</Link>
             </CardTitle>
-            <CardDescription>{item.description}</CardDescription>
+            <CardDescription>
+              {item.description.slice(0, 50)}...
+              <Link href={item.url}>
+                <Button className="w-full mt-4">تعرف علي المزيد</Button>
+              </Link>
+            </CardDescription>
           </Card>
         </div>
       ))}
